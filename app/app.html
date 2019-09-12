@@ -1,0 +1,18 @@
+<ion-split-pane when="sm">
+	<ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>Search Food</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-searchbar [(ngModel)]="searchInput" (ionBlur)="getFood()"></ion-searchbar>
+		<ion-list>
+			<ion-item *ngFor="let food of foodList" detail>
+				<ion-label>
+					<h3 (click)="getNutrients(food.ndbno)">{{food.name}}</h3>
+				</ion-label>
+
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-split-pane>
